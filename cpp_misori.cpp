@@ -47,5 +47,5 @@ float cpp_misori(float* qa_buf, float* qb_buf, float* symm_buf, int n_symm) {
       }
     }
   }
-  return min_angle;
+  return std::max(min_angle, static_cast<float>(0.0));
 }
