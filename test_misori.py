@@ -31,6 +31,12 @@ for i,nneigh in enumerate(NumNeighbors):
   ctr += n
 
 misorientations = misorientations * (180/np.pi)
+s_error = np.square(np.array(MisorientationList) - misorientations)
+max_error = np.max(np.sqrt(s_error))
+RMS_error = np.sqrt(np.mean(s_error))
+print('Max error: {0} degrees'.format(max_error))
+print('RMS error: {0} degrees'.format(RMS_error))
+
 plt.hist(misorientations, 25, normed=True, histtype='step',label='calculated')
 plt.hist(np.array(MisorientationList), 25, normed=True, histtype='step',label='DREAM3D')
 plt.legend(loc='best')
