@@ -3,12 +3,11 @@
 
 #include <Eigen/Geometry>
 
-typedef Eigen::Quaternion<double> Quat;
+typedef Eigen::Quaternion<float> Quat;
 typedef Eigen::Map< Quat > QuatMap;
 typedef Eigen::Map< const Quat > QuatMapConst;
-typedef Eigen::AngleAxis<double> AxAng;
+typedef Eigen::AngleAxis<float> AxAng;
 
-// double misori(double* qa_buf, double* qb_buf, double* symm_buf, int n_symm);
-double misori(double* qa_buf, double* qb_buf);
+float cpp_misori(float* qa_buf, float* qb_buf, float* symm_buf, int n_symm);
 
 #endif
