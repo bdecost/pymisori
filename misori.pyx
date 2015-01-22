@@ -17,7 +17,7 @@ def misori(np.ndarray[np.float32_t, ndim=1] qa,
 
   Keyword argument:
   symm: 2D numpy array containing unit quaternion symmetry operators.
-        defaults to cubic symmetry (as defined in 'symmetry.pxi'
+        defaults to cubic symmetry (as defined in 'symmetry.pxi')
   """
   cdef np.ndarray[float,mode="c"] qa_buf = np.ascontiguousarray(qa.astype('float32'))
   cdef np.ndarray[float,mode="c"] qb_buf = np.ascontiguousarray(qb.astype('float32'))
