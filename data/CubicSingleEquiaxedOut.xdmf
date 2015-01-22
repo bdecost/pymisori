@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE Xdmf SYSTEM "Xdmf.dtd"[]>
+<Xdmf xmlns:xi="http://www.w3.org/2003/XInclude" Version="2.2">
+ <Domain>
+
+  <Grid Name="StatsGeneratorDataContainer" GridType="Uniform">
+    <Topology TopologyType="3DCoRectMesh" Dimensions="1 1 1 "></Topology>
+    <Geometry Type="ORIGIN_DXDYDZ">
+      <!-- Origin  Z, Y, X -->
+      <DataItem Format="XML" Dimensions="3">0 0 0</DataItem>
+      <!-- DxDyDz (Spacing/Resolution) Z, Y, X -->
+      <DataItem Format="XML" Dimensions="3">1 1 1</DataItem>
+    </Geometry>
+  </Grid>
+  <!-- *************** END OF StatsGeneratorDataContainer *************** -->
+
+  <Grid Name="SyntheticVolume" GridType="Uniform">
+    <Topology TopologyType="3DCoRectMesh" Dimensions="65 65 65 "></Topology>
+    <Geometry Type="ORIGIN_DXDYDZ">
+      <!-- Origin  Z, Y, X -->
+      <DataItem Format="XML" Dimensions="3">0 0 0</DataItem>
+      <!-- DxDyDz (Spacing/Resolution) Z, Y, X -->
+      <DataItem Format="XML" Dimensions="3">0.5 0.5 0.5</DataItem>
+    </Geometry>
+    <Attribute Name="EulerAngles" AttributeType="Vector" Center="Cell">
+      <DataItem Format="HDF" Dimensions="64 64 64 3" NumberType="Float" Precision="4" >
+        CubicSingleEquiaxedOut.dream3d:/DataContainers/SyntheticVolume/CellData/EulerAngles
+      </DataItem>
+    </Attribute>
+    <Attribute Name="FeatureIds" AttributeType="Scalar" Center="Cell">
+      <DataItem Format="HDF" Dimensions="64 64 64 1" NumberType="Int" Precision="4" >
+        CubicSingleEquiaxedOut.dream3d:/DataContainers/SyntheticVolume/CellData/FeatureIds
+      </DataItem>
+    </Attribute>
+    <Attribute Name="IPFColor" AttributeType="Vector" Center="Cell">
+      <DataItem Format="HDF" Dimensions="64 64 64 3" NumberType="UChar" Precision="1" >
+        CubicSingleEquiaxedOut.dream3d:/DataContainers/SyntheticVolume/CellData/IPFColor
+      </DataItem>
+    </Attribute>
+    <Attribute Name="Phases" AttributeType="Scalar" Center="Cell">
+      <DataItem Format="HDF" Dimensions="64 64 64 1" NumberType="Int" Precision="4" >
+        CubicSingleEquiaxedOut.dream3d:/DataContainers/SyntheticVolume/CellData/Phases
+      </DataItem>
+    </Attribute>
+  </Grid>
+  <!-- *************** END OF SyntheticVolume *************** -->
+ </Domain>
+</Xdmf>
